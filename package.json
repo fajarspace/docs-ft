@@ -1,0 +1,30 @@
+{
+  "name": "vnovel",
+  "version": "0.0.1",
+  "description": "Pixiv-like theme for novels",
+  "main": "index.js",
+  "repository": "https://github.com/opera7133/vnovel",
+  "author": "wamo <ainznino@pm.me>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently npm:watch:*",
+    "watch:tw": "tailwindcss -i ./themes/vnovel/assets/css/main.css -o ./themes/vnovel/assets/css/style.css --watch",
+    "watch:hugo": "npx tinacms dev -c \"hugo server -D\"",
+    "watch:tina": "npx tinacms dev --skip-server",
+    "build": "npx tinacms build && hugo --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
+    "@tinacms/cli": "^1.9.5",
+    "@types/node": "^22.15.3",
+    "autoprefixer": "^10.4.4",
+    "concurrently": "^9.0.0",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.0.1"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.5",
+    "tinacms": "^2.7.5"
+  }
+}
